@@ -1,0 +1,206 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    width: 99%;
+    height: 97%;
+    background-image: url("Background2.png");
+    background-size: cover;
+}
+.top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 80px;
+    align-items:center ;
+    padding: 0px 40px;
+    padding-right: 15%;
+}
+.logo{
+    font-size: 35px;
+    color:orange;
+    font-style:initial;
+}
+.nav{
+    position:relative;
+
+}
+.navbtn{
+    padding: 5px 15px;
+    color:orange;
+    font-size: 20px;
+    text-decoration: none;
+}
+.navbtn:hover{
+    color:azure;
+    text-decoration:underline;
+    text-underline-position: under;
+}
+.btn{
+    display:flex;
+    margin-right: auto0;
+    padding-left: 100px;
+    color:orange;
+    font-size: 20px;
+    text-decoration: none;
+    background-color:black;
+    color: #fff;
+    }
+    .btn{
+    border:1.5px solid #fff;
+    border-radius: 0px 12px 0px 12px;
+    padding:5px 5px;
+    color:#fff;
+    text-decoration:none;
+    transition: 0.6s ease;
+    box-shadow: 0px 1px 0px 1px black;
+    }
+    /* .btn:hover{
+    background-color: black;
+    color:#000;
+    }
+    
+    .btn:hover::after{
+      background-color: red;
+    } */
+
+    .btn1{
+        font-size:27px;
+        position:absolute;
+        top:10%;
+        left:93%;
+        transform:translate(-50%,-50%);
+        
+        }
+        .btn1{
+        border:1.5px solid #fff;
+        border-radius: 0px 12px 0px 12px;
+        padding:5px 2px;
+        color:#fff;
+        text-decoration:none;
+        transition: 0.6s ease;
+        box-shadow: 0px 1px 0px 1px black;
+        
+        
+        }
+        .btn1:hover{
+        background-color: black;
+        color:#000;
+        
+        
+        }
+        
+        .btn1:hover::after{
+          background-color: darkred;
+        }
+.reg-but{
+    color: #fff;
+    background-color: #000;
+    text-decoration: none;
+}        
+.search{
+    font-size: 25px;
+}
+.search i{
+    padding: 5px 20px;
+
+}
+/*.....Heading....*/
+.heading{
+    display:flex;
+    justify-content: space-evenly;
+    padding-top: 65px;
+    align-items:center;
+
+}
+.right{
+    width:460px;
+    height:460px;
+    background-image: url("Chicken-Angara-2-3.jpg");
+    background-size:cover;
+    border-radius: 400px;
+    display:flex;
+    justify-content:center;
+}
+.right::before{
+    width:430px;
+    height:430px;
+    border:2px solid rgb(146, 40, 40);
+    content: '';
+    position:absolute;
+    border-radius: 430px;
+    padding: 10px;
+}
+/*.....left......*/
+.left p:nth-child(1){
+    color:orange;
+    font-size: 30px;
+    letter-spacing:1px;
+    font-style:italic;
+}
+.left h1{
+    font-size: 90px;
+    color:aliceblue;
+}
+.left p:nth-child(3){
+    color:orange;
+    font-size:30px;
+    font-style:italic;
+
+}
+.left button{
+    width:150px;
+    height:30px;
+    font-size: 15px;
+    border-radius: 20px;
+    border:2px solid white;
+    background-color: transparent;
+    color:aliceblue;
+    margin:20px 0px;
+
+}
+/*...SocialMedia......*/
+.SocialMedia{
+    position:absolute;
+    right:0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    width: 40px;
+    height: 200px;
+    background-color: aliceblue;
+    font-size: 25px;
+}
+
+.SocialMedia i:hover{
+    color:orange;
+}
+/*........bottom.....*/
+#food1,#food2{
+    background-size: cover;
+    width:100px;
+    border-radius: 100px;
+    margin: 0px 20px;
+}
+
+#food1{
+    background-image: url("food11.png");
+}
+#food2{
+    background-image: url("food22.jpg");
+}
+.menu{
+    display: flex;
+    margin: 0px 100px;
+
+}
+img{
+    height:100px;
+    width: 100px;
+    border-radius: 70%;
+}
+
+
+

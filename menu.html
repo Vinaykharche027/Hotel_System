@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Restaurant Menu</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url("Background2.png");
+    }
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #6879e7;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .container::after{
+        position: absolute;
+        content: "";
+        top: calc(var(--card-height) / 6);
+        left: 0;
+        right: 0;
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+        margin: 0 auto;
+        transform: scale(0.8);
+        filter: blur(calc(var(--card-height) / 6));
+        background-image: linear-gradient(
+        var(--rotate)
+        , #d7ff5d, #3c67e3 43%, #4e00c2);
+        opacity: 1;
+        transition: opacity .5s;
+        animation: spin 2.5s linear infinite;
+    }
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+    .menu-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+    }
+    .menu-item:last-child {
+        border-bottom: none;
+    }
+    .menu-item img {
+        width: 100px;
+        height: 100px;
+        margin-right: 20px;
+        border-radius: 5px;
+    }
+    .menu-item button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .menu-item button:hover {
+        background-color: #45a049;
+    }
+    #cart {
+        margin-top: 20px;
+    }
+    #place-order {
+        text-align: center;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Restaurant Menu</h1>
+    <div class="menu">
+        <div class="menu-item">
+             <img src="pexels-mali-maeder-64208.jpg" alt="Item 1"> <!-- add images and item name -->
+            <div>
+                <span>Item 1</span>
+                <span>$10</span>
+            </div>
+            <button onclick="addToCart('Item 1', 10)">Add to Cart</button>
+        </div>
+        <div class="menu-item">
+            <img src="tandoor.jpg" alt="Item 2">
+            <div>
+                <span>Item 2</span>
+                <span>$12</span>
+            </div>
+            <button onclick="addToCart('Item 2', 12)">Add to Cart</button>
+        </div>
+        <div class="menu-item">
+            <img src="https://via.placeholder.com/100" alt="Item 3">
+            <div>
+                <span>Item 3</span>
+                <span>$8</span>
+            </div>
+            <button onclick="addToCart('Item 3', 8)">Add to Cart</button>
+        </div>
+        <!-- Add more menu items as needed -->
+        <!-- to add more item use code -->
+
+        <!-- <div class="menu-item">
+            <img src="https://via.placeholder.com/100" alt="Item 3">
+            <div>
+                <span>Item 3</span>
+                <span>$8</span>
+            </div>
+            <button onclick="addToCart('Item 3', 8)">Add to Cart</button>
+        </div> -->
+
+        <!-- code over for item -->
+    </div>
+    <div id="cart"></div>
+    <div id="place-order">
+        <button onclick="placeOrder()">Place Order</button>
+    </div>
+</div>
+
+<script>
+    var cart = [];
+
+    function addToCart(itemName, price) {
+        cart.push({name: itemName, price: price});
+        updateCart();
+    }
+
+    function removeFromCart(index) {
+        cart.splice(index, 1);
+        updateCart();
+    }
+
+    function updateCart() {
+        var cartElement = document.getElementById('cart');
+        cartElement.innerHTML = '<h2>Cart</h2>';
+        var total = 0;
+        cart.forEach(function(item, index) {
+            cartElement.innerHTML += '<div>' + item.name + ' - $' + item.price +
+                                     '<button onclick="removeFromCart(' + index + ')" >-</button>' +
+                                     '</div>';
+            total += item.price;
+        });
+        cartElement.innerHTML += '<div><strong>Total: $' + total + '</strong></div>';
+    }
+
+    function placeOrder() {
+        if (cart.length > 0) {
+            alert('Order placed successfully!');
+            cart = []; // Empty the cart after placing order
+            updateCart(); // Update the cart display
+        } else {
+            alert('Your cart is empty. Please add items to your cart before placing an order.');
+        }
+    }
+</script>
+
+</body>
+</html>
